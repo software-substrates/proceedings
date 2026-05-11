@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../css/proceedings.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" crossorigin="anonymous">
+    <title>Substrates 2026 - Proceedings</title>
+    <style>
+        a {
+            color: #00994d;
+        }
+    </style>
+</head>
+<body>
+    <a href=".."><img src="../img/substrate.jpg" alt="Substrates" class="header-img"></a>
+
+    <h1><a href="https://2026.programming-conference.org/home/substrates-2026">Substrates 2026</a></h1>
+
+    <p>The 2nd workshop of the Substrates community was held on March 17th, 2026, hosted at the
+    <a href="https://2026.programming-conference.org/">‹Programming› 2026 Conference</a> at Munich, Germany.</p>
+    <p>The <a href="https://2026.programming-conference.org/home/substrates-2026#Call-for-Contributions">Call for Contributions</a> solicited papers, demos and other artefacts from the invited participants,
+    which were then circulated for review. The papers and their resviews are collected here.
+    </p>
+
+
+    <h2>Papers</h2>
+
+    <div class="paper">
+        <div class="paper-title"><a href="papers/Paper 4 - Konrad Hinsen - HyperDoc - a hypermedia substrate for knowledge workers.pdf">Paper 4: HyperDoc - a hypermedia substrate for knowledge workers</a></div>
+        <div class="paper-authors">Author: Konrad Hinsen</div>
+        <div class="paper-abstract">
+            <p><a href="https://codeberg.org/khinsen/hyperdoc">HyperDoc</a> is a research project about growing a hypermedia sub-
+    strate for knowledge workers that integrates code as a representation
+    of knowledge. This paper explains the motivation for this work, dis-
+    cusses the research and development strategy, and provides a concise
+    description of its current and possible future state.</p>
+    <p class="links"><a href="papers/Paper 4 - Konrad Hinsen - HyperDoc - a hypermedia substrate for knowledge workers.pdf"><i class="fa fa-arrow-circle-right"></i>Read the paper</a> &ndash;
+    <a href="reviews/Paper 4 - reviews.html">Read the reviews</a></p>
+        </div>
+    </div>
+
+    <div class="paper">
+        <div class="paper-title"><a href="papers/Paper 6 - Tom Larkworthy - The Lopecode Tour.pdf">Paper 6: The Lopecode Tour</a></div>
+        <div class="paper-authors">Author: Tom Larkworthy</div>
+        <div class="paper-abstract">
+            <p><a href="https://tomlarkworthy.github.io/lopecode/notebooks/@tomlarkworthy_lopecode-tour.html">Lopecode</a> is a document you can double‑click or throw on the web. It’s readable
+            prose and a live programming environment. It resists bit-rot because it's a local‑first,
+                single HTML file that works without network.</p>
+            <p>It's a tool-for-thought and a distribution format: a reactive runtime that
+            self‑serializes with all dependencies bundled. The core is a tiny UI-less microkernel;
+                features are userspace modules you can inspect, edit, and change live.</p>
+            <p>It’s made for experimentation: extremely extensible, engineered to be fast (no
+            network round trips), durable (plain‑text, git‑friendly), and immediate — change
+                code and see the system update in place.</p>
+
+
+    <p class="links"><a href="papers/Paper 6 - Tom Larkworthy - The Lopecode Tour.pdf"><i class="fa fa-arrow-circle-right"></i>Read the paper</a> &ndash;
+    <a href="reviews/Paper 6 - reviews.html">Read the reviews</a></p>
+        </div>
+    </div>
+
+    <div class="paper">
+        <div class="paper-title"><a href="papers/Paper 8 - Eva Krebs and Tom Beckmann - Can We Teach How to Explore Substrates and Systems.pdf">Paper 8 - Can We Teach How to Explore Substrates and Systems?</a></div>
+        <div class="paper-authors">Authors: Eva Krebs and Tom Beckmann</div>
+        <div class="paper-abstract">
+            <p>To use any authoring system, you need to get familiar with its
+                concepts and available tooling. Especially if we want to create
+                systems that are malleable and adaptable, users need to find out
+                what they can change - and how they can change it. But how do
+                we enable this? Substrates aim to be malleable for everyone, not
+                just system developers; this likely means users should find answers
+                within the user-facing part of the system, rather than requiring a
+                switch to a lower level of abstraction, such as the virtual machine.
+                Additionally, substrates might explore new interaction methods
+                that differ from most established IDEs, making easy explorability
+                and discoverability even more critical.</p>
+            <p>However, in our software engineering courses, we noticed that
+            students struggle to explore new systems that aim to contain their
+            own documentation. Even if a system has a variety of tools and
+            is self-documenting, it can be challenging for a new user to know
+            what to look for. In this submission, we will report on some
+            approaches we have tried and the struggles we encountered in our
+            courses.</p>
+
+<p class="links"><a href="papers/Paper 8 - Eva Krebs and Tom Beckmann - Can We Teach How to Explore Substrates and Systems.pdf"><i class="fa fa-arrow-circle-right"></i>Read the paper</a> &ndash;
+    <a href="reviews/Paper 8 - reviews.html">Read the reviews</a></p>
+        </div>
+    </div>
+
+
+    <div class="paper">
+        <div class="paper-title"><a href="papers/Paper 9 - Beni Cherniavsky-Paskin - Model - View - Self-Modify architecture.pdf">Paper 9 - Model |> View |> Self-Modify architecture</a></div>
+        <div class="paper-authors">Author: Beni Cherniavsky-Paskin</div>
+        <div class="paper-abstract">
+            <p>Representing user actions as source code modification is an under-explored approach to state management.
+                In the current naive form the idea is roughly language-agnostic I built a JavaScript live coding environment to play with it. </p>
+            <p>I'm excited about it for 2 reasons:<ol>
+            <li>Cognitive simplicity: It requires grokking only one concept of change for code & data evolution, and it doesn't force one above the other.</li>
+            <li>By implementing "Always Already Programming" literally, it is conductive to blurring the boundaries between
+                language/env authors | developer | end-user.</li>
+        </ol>
+                <p>There are obvious concerns including ⚠security, scalability, and software updates. Yet if you want to build malleable, bi-directional, home-cooked,
+                end-user-empowering experiences, I propose this is a fruitful starting point.
+                Prior art links are spread through the sections, trying to focus on relevant aspects. The core idea is so simple that I'm sure more people independently
+                discovered it before, but I'm not aware of an agreed-upon term; I hope "Model View Self-Modify" name might stick by comparison to well-
+                    understood Model-View-Update architecture?</p>
+
+            <p class="links"><a href="papers/Paper 9 - Beni Cherniavsky-Paskin - Model - View - Self-Modify architecture.pdf"><i class="fa fa-arrow-circle-right"></i>Read the paper</a> &ndash;
+                <a href="reviews/Paper 9 - reviews.html">Read the reviews</a></p>
+        </div>
+    </div>
+
+    <div class="paper">
+        <div class="paper-title"><a href="papers/Paper 10 - Joel Jakubovic and Camille Gobert - On Vector Graphics Substrates and their Potential.pdf">Paper 10: On Vector Graphics Substrates and their Potential</a></div>
+        <div class="paper-authors">Authors: Joel Jakubovic and Camille Gobert</div>
+        <div class="paper-abstract">
+<p>Pencil-and-paper supports a naïve “notational freedom” where notations can be conjured up on
+    demand. Although programming was born in such a world, it has since been locked in to textual notation.
+    Efforts to support alternative notations have required them to be designed long in advance, or have followed a
+    “Modernist” paradigm demanding investment in a particular drawing, programming, and storage ecosystem.
+    We propose a “Postmodern” alternative: treat SVG diagrams as a substrate for notational freedom. By exploiting
+    the de-facto status of SVG across editors and browsers, we can largely avoid reinventing various wheels and
+    instead focus on the missing piece: the interpretation and macro-expansion of vector graphics as programs. We
+    sketch a “Vector Vision Engine” (VVE) that extracts spatial properties from SVG diagrams, executes embedded
+    code, and understands user-defined ad-hoc notations. Static diagrams, whose processing terminates in arbitrary
+    output, contrast with “self-raising” diagrams which bootstrap themselves into interactive apps. We describe
+    some principles and challenges of such an architecture, and close with some open questions for discussion.</p>
+
+<p class="links"><a href="papers/Paper 10 - Joel Jakubovic and Camille Gobert - On Vector Graphics Substrates and their Potential.pdf"><i class="fa fa-arrow-circle-right"></i>Read the paper</a> &ndash;
+    <a href="reviews/Paper 10 - reviews.html">Read the reviews</a></p>
+        </div>
+    </div>
+
+     <div class="paper">
+        <div class="paper-title"><a href="papers/Paper 11 - Antranig Basman and Clemens Nylandsted Klokmose - Moral Dimensions of Substrate Research Programmes.pdf">Paper 11: Moral Dimensions of Substrate Research Programmes</a></div>
+        <div class="paper-authors">Authors: Antranig Basman and Clemens Nylandsted Klokmose</div>
+        <div class="paper-abstract">
+<p>2025’s Substrates Workshop garnered a wide spectrum of approaches to this nascent field of
+    software construction. As the call for this year’s workshop acknowledged, these could be fitted onto
+    one or more dimensions, reflecting different modes of enquiry and the interests of different research
+    communities. Articulating these dimensions and trying to place the work of our contributors along
+    them might help clarify the relationships between the work of different groups and how they can
+    complement each other, and how they could be scheduled as part of the work of a larger research
+    programme.</p>
+    <p>This short paper makes some highly provisional attempts to identify such axes and place some
+    relevant work on them. It should be considered as a spring-board for discussion and mutual
+    illumination rather than a finished taxonomy.</p>
+
+<p class="links"><a href="papers/Paper 11 - Antranig Basman and Clemens Nylandsted Klokmose - Moral Dimensions of Substrate Research Programmes.pdf"><i class="fa fa-arrow-circle-right"></i>Read the paper</a> &ndash;
+    <a href="reviews/Paper 11 - reviews.html">Read the reviews</a></p>
+        </div>
+    </div>
+
+    <div class="paper">
+        <div class="paper-title"><a
+                href="papers/Paper 14 - Antranig Basman - fluid.cell - A reactive implementation supporting malleable substrates.pdf">Paper
+            14: fluid.cell: A reactive implementation supporting malleable substrates</a></div>
+        <div class="paper-authors">Author: Antranig Basman</div>
+        <div class="paper-abstract">
+            <p>This post explains why reactivity is a key requirement for openly authored, malleable substrates, and
+                motivates fluid.cell, a reactive library designed to support the needs of these substrates. It preserves
+                the good properties of widely available commodity reactive systems whilst expanding their domain. I
+                explain the core reactive competencies of glitch freedom and early cutoff, and how fluid.cell delivers
+                these competencies whilst supporting reactive graphs with bidirectional arcs, asynchronous propagation
+                of reactive updates and allows the cause of these updates to be tracked to their source, and why these
+                expanded capabilities are vital to support successful substrates. The post includes a interactive visual
+                demo of the reactive library on some simple test fixtures.</p>
+
+            <p class="links"><a
+                    href="papers/Paper 14 - Antranig Basman - fluid.cell - A reactive implementation supporting malleable substrates.pdf"><i
+                    class="fa fa-arrow-circle-right"></i>Read the paper</a> &ndash;
+                <a href="reviews/Paper 14 - reviews.html">Read the reviews</a></p>
+        </div>
+    </div>
+
+    <div class="paper">
+        <div class="paper-title"><a
+                href="papers/Paper 15 - Orion Reed and Chris Shank - Substrates via Accessibility.pdf">Paper
+            15: Substrates via Accessibility</a></div>
+        <div class="paper-authors">Authors: Orion Reed and Chris Shank</div>
+        <div class="paper-abstract">
+            <p>The social model of disability holds that disability is
+                produced by environments, not by bodies — that when
+                software fails to accommodate a person’s needs, the environment is disabling them. We argue that the dominant
+                organization of computing produces such interaction mismatches structurally: the commodity form of software
+                requires a standardized consumer, and everyone whose
+                needs diverge from this imagined subject is disabled by the
+                software environment. The substrates research community
+                has identified properties — disclosure, composability, malleability — that would address this, but the commodity
+                form actively selects against these properties because they
+                dissolve the boundaries on which exchange value depends.
+                This raises a question: how can infrastructure organized
+                against the grain of commodity logic be made durable? We
+                find a precedent in accessibility infrastructure — sustained
+                not by patronage but by the organized counterpower of
+                disability rights movements. Through Allio, a system for
+                cross-application augmentation built on accessibility APIs,
+                we illustrate both what this foundation makes possible and
+                where its limits lie. We argue that the accessibility case
+                reframes the substrates programme’s central challenge as
+                political-economic: the question of who sustains substrate
+                infrastructure, and through what social mechanisms, is as
+                important as the question of what properties it should have.</p>
+
+            <p class="links"><a
+                    href="papers/Paper 15 - Orion Reed and Chris Shank - Substrates via Accessibility.pdf"><i
+                    class="fa fa-arrow-circle-right"></i>Read the paper</a> &ndash;
+                <a href="reviews/Paper 15 - reviews.html">Read the reviews</a></p>
+        </div>
+    </div>
+
+    <div class="paper">
+        <div class="paper-title"><a
+                href="papers/Paper 16 - James Eagan - Interactive Substrates for Malleable Software.pdf">Paper
+            16: Interactive Substrates for Malleable Software</a></div>
+        <div class="paper-authors">Authors: James Eagan</div>
+        <div class="paper-abstract">
+            <p>The social model of disability holds that disability is
+                produced by environments, not by bodies — that when
+                software fails to accommodate a person’s needs, the environment is disabling them. We argue that the dominant
+                organization of computing produces such interaction mismatches structurally: the commodity form of software
+                requires a standardized consumer, and everyone whose
+                needs diverge from this imagined subject is disabled by the
+                software environment. The substrates research community
+                has identified properties — disclosure, composability, malleability — that would address this, but the commodity
+                form actively selects against these properties because they
+                dissolve the boundaries on which exchange value depends.
+                This raises a question: how can infrastructure organized
+                against the grain of commodity logic be made durable? We
+                find a precedent in accessibility infrastructure — sustained
+                not by patronage but by the organized counterpower of
+                disability rights movements. Through Allio, a system for
+                cross-application augmentation built on accessibility APIs,
+                we illustrate both what this foundation makes possible and
+                where its limits lie. We argue that the accessibility case
+                reframes the substrates programme’s central challenge as
+                political-economic: the question of who sustains substrate
+                infrastructure, and through what social mechanisms, is as
+                important as the question of what properties it should have.</p>
+
+            <p class="links"><a
+                    href="papers/Paper 16 - James Eagan - Interactive Substrates for Malleable Software.pdf"><i
+                    class="fa fa-arrow-circle-right"></i>Read the paper</a> &ndash;
+                <a href="reviews/Paper 16 - reviews.html">Read the reviews</a></p>
+        </div>
+    </div>
+
+    <div class="footer">
+        <a href="https://2026.programming-conference.org/home/substrates-2026">Official workshop page</a>
+        <a href="https://github.com/software-substrates/proceedings"><div>Clone this repository on GitHub</div><i class="fa fa-github" aria-hidden="true"></i></a>
+    </div>
+</body>
+</html>

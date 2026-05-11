@@ -1,0 +1,276 @@
+<html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../../css/reviews.css" rel="stylesheet">
+</head>
+
+<title>Substrates 2026 - Proceedings</title>
+<body>
+<h1>Reviews for Paper 9: Model |> View |> Self-Modify architecture</h1>
+
+<div class="subcontent">
+
+    <h3>Reviews and Comments</h3>
+    <div style="clear: right"><a name="Review_12873333">
+        <div class="ct_tbl">
+            <table cellpadding="0" cellspacing="0" class="ct_table" id="ec:table131900"
+                   style="border-bottom:solid #aaa 1px;border-top:solid #bbb 1px;max-width:700pt" data-header="false"
+                   data-kind="new" data-uid="8748486012387925459">
+                <tbody>
+                <tr class="grey top bottom" data-ignore="1">
+                    <td class="center" colspan="2"><b>Review 1</b></td>
+                </tr>
+                <tr class="blue">
+                    <td>PC member</td>
+                    <td class="value">Clemens Nylandsted Klokmose</td>
+                </tr>
+                <tr class="blue">
+                    <td><i>Overall evaluation</i></td>
+                    <td class="value">
+                        The Model |&gt; View |&gt; Self-modify architecture presents a programming paradigm where user
+                        actions are, in fact, edits to the source code of the running system.<br><br>The little live
+                        programming system that the author has created is impressive. However, for many of the reasons
+                        that the author also lists, I am not convinced that this is the future of programming. <br><br>Yet,
+                        what is interesting is that it in its own peculiar way bridges runtime and edit state and lowers
+                        what Basman et al (2016) call divergence. <br><br>The game state in the Tetris game only changes
+                        when the user presses a button and a line of code is added to the source code.<br>In regular
+                        Tetris, fall by themselves, only accelerated by the player. I am not sure how a game loop such
+                        as this would be expressed and if the edits by the game would become source code as
+                        well?<br><br>In the Tetris game, the user input is in the form of<br>```<br>model =
+                        down(model)<br>model = left(model)<br>```<br><br>But it is unclear what can be learned from
+                        these lines of code when they are difficult (impossible?) to connect with the state of the game
+                        at the time? Or is that done through playback? I am not sure.<br><br>I am also not sure how
+                        something like document editing would be realised in this paradigm where edits to a document are
+                        side effects of user actions.<br><br>Anyways, I think this is a charming and provoking thought
+                        experiment, and I think it will be a great conversation piece at the Substrates
+                        workshop.<br><br>References:<br>Basman, A., Church, L., Klokmose, C. N., &amp; Clark, C. B.
+                        (2016). <a href="https://www.ppig.org/files/2016-PPIG-27th-Basman1.pdf">Software and How it Lives On - Embedding Live Programs in the World Around Them</a>. In PPIG
+                        (Vol. 19, pp. 25-27).
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </a><a name="Review_12875211">
+        <div class="ct_tbl">
+            <table cellpadding="0" cellspacing="0" class="ct_table" id="ec:table131901"
+                   style="border-bottom:solid #aaa 1px;border-top:solid #bbb 1px;max-width:700pt" data-header="false"
+                   data-kind="new" data-uid="17645417344577933878">
+                <tbody>
+                <tr class="grey top bottom" data-ignore="1">
+                    <td class="center" colspan="2"><b>Review 2</b></td>
+                </tr>
+                <tr class="blue">
+                    <td>PC member</td>
+                    <td class="value">Jonathan Edwards</td>
+                </tr>
+                <tr class="blue">
+                    <td><i>Overall evaluation</i></td>
+                    <td class="value">
+                        Pros:<br><br>- Advocates an unusual and under-explored idea: record the state of a program by
+                        modifying the (ASCII) source code. The source becomes literally the source of truth. <br>-
+                        Although there is no specific Related Work section, most of the related work is in fact
+                        mentioned in passing. The biggest omission is the work on Orthogonal Persistence.<br>- Is honest
+                        about the unsolved problem of schema change, where code edits change the type of the persisted
+                        data. Almost all prior work avoids the issue entirely, or tries to downplay it.<br><br>Cons:<br>-
+                        There are many technical problems facing this approach that will be encountered as soon as it
+                        attempts to scale up from toy examples. The submission would be more credible if it acknowledged
+                        some of these, listed below.<br>- The submission is more of a set of notes than a structured
+                        narrative. I was able to follow it, but that might be because I have done related work — it
+                        might be harder going for the general audience of the workshop. The benefit to the workshop
+                        audience will depend largely on the presentation skills of the author.<br><br>Technical
+                        issues:<br>- How do you handle pointer aliasing?<br>- How do you handle environmental state,
+                        like DOM node pointers, OS file handles? Function closures? These are reasons that, as the paper
+                        notes, most attempts to integrate code and data state have gone the opposite direction, storing
+                        code in the runtime state.<br>- How do you order changes? Distributing them in the source code
+                        will mean they execute according to the languages initialization semantics, which sometimes
+                        doesn’t define (cross-mopdule) order, or at best uses textual order. Doesn’t this lead to the
+                        entire state being stored in a single `var model = ...` variable? And then, why is there any
+                        benefit over serialzing state into a file and reloading on initialization? For example JSON has
+                        been extended to support aliased references and incremental patches.<br><br>Overall I am an
+                        accept, because I feel this line of thinking is needed to fully realize the potential of
+                        substrates. At this early stage of the field we should be encouraging divergent ideas. However
+                        my judgement may be swayed by my closeness to the issue.<br>I encourage the author to follow up
+                        on this work, exploring some of the issues above, and writing a more reader-friendly paper.
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </a><a name="Review_12877174">
+        <div class="ct_tbl">
+            <table cellpadding="0" cellspacing="0" class="ct_table" id="ec:table131902"
+                   style="border-bottom:solid #aaa 1px;border-top:solid #bbb 1px;max-width:700pt" data-header="false"
+                   data-kind="new" data-uid="10722359463433634955">
+                <tbody>
+                <tr class="grey top bottom" data-ignore="1">
+                    <td class="center" colspan="2"><b>Review 3</b></td>
+                </tr>
+                <tr class="blue">
+                    <td>PC member</td>
+                    <td class="value">Gamithra Marga</td>
+                </tr>
+                <tr class="blue">
+                    <td><i>Overall evaluation</i></td>
+                    <td class="value">
+                        This paper proposes an approach to state management where user actions are represented not as
+                        data objects but as code that gets literally appended to the source file, which becomes a
+                        'transcript' of the session; allowing user history to become as durable as programmer history
+                        because they're stored in the same form.<br><br>The core insight is genuinely exciting, and I
+                        think slightly undersold, even, by the paper's own framing. The observation that user state and
+                        developer state are treated as categorically different -- developer work is durable by default,
+                        user work requires explicit serialization infrastructure -- is a real and underappreciated
+                        asymmetry. Collapsing that distinction has immediate practical consequences (shareable state
+                        that's fully reproducible, not just "export this JSON and hope the developer thought to support
+                        that"). I really appreciate the political implications, as the interaction history becomes
+                        something you own and can inspect, not something the application manages on your behalf.<br><br>The
+                        "always already programming" frame of mind is great, reframing "how do we teach users to
+                        program" to "how do we stop hiding the programming that's already happening", and this paper
+                        demonstrates an extremely clear example of doing exactly that.<br><br>The paper is structured
+                        more like a live notebook of exploration than an argument, and I found that slightly frustrating
+                        as a reader; but the core thesis is extractable. The ideas are good enough to deserve more
+                        structure! However, the O(n²) problem is not a minor caveat, and I'm looking forward to a more
+                        meaningful path forward to be proposed. I'd like to see more thinking about where the insight
+                        remains useful even if full self-modification doesn't scale -- turn-based systems? Documents?
+                        Short sessions with explicit checkpointing? Potential security concerns created also seem more
+                        serious than the paper treats them. However, the core insight, that the user/developer asymmetry
+                        in state durability is a political problem with a technically tractable solution, is worth
+                        taking seriously.<br><br>I am excited to try the Tetris demo -- I could not get it to load
+                        (stuck at TypeError: model is undefined).
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </a><a name="Review_12878716">
+        <div class="ct_tbl">
+            <table cellpadding="0" cellspacing="0" class="ct_table" id="ec:table131903"
+                   style="border-bottom:solid #aaa 1px;border-top:solid #bbb 1px;max-width:700pt" data-header="false"
+                   data-kind="new" data-uid="1832128324165096443">
+                <tbody>
+                <tr class="grey top bottom" data-ignore="1">
+                    <td class="center" colspan="2"><b>Review 4</b></td>
+                </tr>
+                <tr class="blue">
+                    <td>PC member</td>
+                    <td class="value">Orion Reed</td>
+                </tr>
+                <tr class="blue">
+                    <td><i>Overall evaluation</i></td>
+                    <td class="value">
+                        The submission presents a JS live coding environment in which user actions are represented as
+                        source code modifications — specifically, lines of code appended to the program text. The author
+                        argues this offers cognitive simplicity (one concept of change), persistence by default (user
+                        work becomes as durable as developer code), and a natural pathway from end-use to programming. A
+                        counter and a Tetris implementation are used as demonstrations.<br><br>The submission observes
+                        that the asymmetry between developer work (durable source code) and user work (ephemeral runtime
+                        state) is structural to most programming architectures, and collapsing the two by making user
+                        actions via UI be literally expressed as code changes is a move that deserves more serious
+                        exploration. The reframing of Redux-style action dispatch as an "external DSL" (action data
+                        interpreted by a reducer) versus MVSM's "internal DSL" (function calls that execute directly) is
+                        a useful distinction that clarifies the architectural choice. The connection to colorForth's
+                        magenta variables is mentioned, though I wish it were explored further. The Tetris time-travel
+                        example, where moving a cursor line through the game's source-encoded action history replays the
+                        game state, is genuinely quite delightful and, while still underdeveloped, demonstrates a
+                        direction I would like to see taken further.<br><br>However, I found the submission quite
+                        difficult to parse at times, and I think its value is obscured by its form. It reads as a
+                        brainstorm/sketch despite there being a very real prototype as the core of the submission, with
+                        many brief asides appearing alongside more substantive arguments, making it hard to distinguish
+                        claims from speculation. The submission touches many ideas — Hoff's "Always Already
+                        Programming," Cambria's schema evolution work, event sourcing, MVU/Redux, colorForth,
+                        Graphite.rs, VisiCalc's keystroke save format, Photoshop layers, Typst interactive games, mage
+                        (Kery et al., UIST 2020), chess notation — but few are engaged with at any depth. The result is
+                        a paper that gestures at a rich design space without clearly staking out what it contributes to
+                        that space beyond the prototype itself.<br><br>I have several specific concerns and
+                        questions:<br><br>The O(n²) slowdown problem is the most obvious threat to viability, though
+                        this is a little misleading as written as it's closer to "O(n) per interaction with linearly
+                        growing n". Each interaction appends code that must be re-executed from the start. The paper
+                        acknowledges this and speculates that incremental computation or dataflow structure (Observable
+                        runtime, Marimo) might help. But if the solution is to impose dataflow structure, then the
+                        append-only source text becomes an encoding of reactive cell updates — and it's unclear what
+                        this buys over working directly in a reactive dataflow system like Lopecode (Larkworthy). The
+                        paper would benefit from a sharper account of what MVSM provides that reactive dataflow does
+                        not. I would also like to see further exploration of overwriting/rewriting of code (which avoids
+                        the slowdown problem), and perhaps ways that this could be mixed with the append-heavy approach.<br><br>The
+                        security and injection concerns point to a fundamental tension in the architecture. If user
+                        input must be sanitized before becoming code (the paper notes WRITE('string') is risky), then
+                        you reintroduce a distinction between "safe user operations" and "real code" that the
+                        architecture is designed to dissolve.<br><br>The multiplayer section mentions CRDTs on plaintext
+                        source, though this would pose a challenge, as concurrent edits to a shared program text can
+                        produce syntactically invalid programs. An AST-level representation in the modification loop
+                        could potentially address this, but would move the architecture away from its appealing
+                        simplicity. More generally, I'm curious how the author sees this relating to approaches where UI
+                        widgets are generated from AST analysis and write back to source via structured AST rewrites
+                        rather than string appending — this preserves syntactic validity but introduces structural
+                        complexity that may undercut the cognitive simplicity argument.<br><br>One compelling
+                        under-realized direction, to my eye, is the one sketched under "Reduce barriers between app
+                        developer / IDE developer" — the idea that if user-facing UI is just code that writes code, then
+                        the same skills transfer to building developer tooling (TDD helpers, Babylonian-style inline
+                        examples, level editors). This connects to the broader substrates concern with closing the gap
+                        between use and programming. The Tetris level editor, where clicking board cells inserts
+                        coordinate literals into source, is a concrete and appealing example. The CURSOR() /
+                        LINE_START(HERE()) API for representing multiple independent write locations in source is also a
+                        real design contribution that deserves more attention than it receives — it's what makes the
+                        multiple-counter example work, and it raises interesting questions about the relationship
+                        between source topology and application state. I would have liked to see these more developed
+                        directions given priority over the many lightly-touched references.<br><br>Despite these
+                        concerns, the core idea is worth discussing at the workshop. The examples are concrete, and the
+                        architecture is simple. With tighter framing and deeper engagement with a smaller number of
+                        precedents, this could develop into a strong contribution.
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </a><a name="Review_12883343">
+        <div class="ct_tbl">
+            <table cellpadding="0" cellspacing="0" class="ct_table" id="ec:table131904"
+                   style="border-bottom:solid #aaa 1px;border-top:solid #bbb 1px;max-width:700pt" data-header="false"
+                   data-kind="new" data-uid="16029313601421449824">
+                <tbody>
+                <tr class="grey top bottom" data-ignore="1">
+                    <td class="center" colspan="2"><b>Review 5</b></td>
+                </tr>
+                <tr class="blue">
+                    <td>PC member</td>
+                    <td class="value">Pavel Bažant</td>
+                </tr>
+                <tr class="blue">
+                    <td><i>Overall evaluation</i></td>
+                    <td class="value">
+                        This contribution posits that storing user state in the source code is a fruitful and
+                        underexplored approach to malleable software and end-user programming.<br><br>The article is a
+                        snapshot of a runnable demo, which is, in my opinion, the perfect approach. (In general,
+                        applying the kind of thinking described in an article to the process of producing an article is
+                        a powerful kind of dogfooding.)<br><br>You demo how mixing user data and code leads to
+                        conceptual simplicity that might make it easier to add a little bit of programming to a
+                        "regular" user experience. The second example (Tetris) also shows how this design allows the
+                        programmer to add a little bit of GUI to the text-centric program development process.<br>When
+                        using the cursor position as the insertion point, it might be useful to implement some kind of
+                        guard that looks at the context.<br><br>The particular implementation is wildly "postmodern" in
+                        the sense explored by Camille Gobert last year. It uses many existing mechanisms: undo-redo on a
+                        text buffer, the browser with all its dynamism, it (ab)uses comments to implement time travel
+                        (this really made me smile), relies on cursor or good enough markers in the source code to
+                        insert text. I played with the system a bit and the "feeling" of the interaction turned out much
+                        better than I'd have expected after just reading a description without a runnable demo.<br><br>One
+                        cool thing about your proposal when compared to live programmable systems like Lisp Machines or
+                        Smalltalk is that you don't need a debugger to view the state of the system. The divergence
+                        between what is seen and what is the actual state becomes smaller. So this brings some of the
+                        benefits of Boxer and Spreadsheets to traditional programming.<br><br>It seems to me that the
+                        internal vs external dsl distinction is largely independent of the traditional vs self-modifying
+                        aspect. I suppose all 4 combinations are viable?<br><br>You provide many references to related
+                        actually runnable systems, which I consider really useful.<br>I am delighted you mention
+                        colorForth! This unique and original system deserves more attention.<br><br>Great work overall.
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </a></div>
+</div>
+
+</body>
+</html>

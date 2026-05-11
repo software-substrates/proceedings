@@ -1,0 +1,227 @@
+<html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../../css/reviews.css" rel="stylesheet">
+</head>
+
+<title>Substrates 2026 - Proceedings</title>
+<body>
+<h1>Reviews for Paper 12: fluid.cell: A reactive implementation supporting malleable substrates</h1>
+
+<div class="subcontent">
+    <h3>Reviews and Comments</h3>
+    <div style="clear: right"><a name="Review_12860486">
+        <div class="ct_tbl">
+            <table cellpadding="0" cellspacing="0" class="ct_table" id="ec:table11027"
+                   style="border-bottom:solid #aaa 1px;border-top:solid #bbb 1px;max-width:700pt" data-header="false"
+                   data-kind="new" data-uid="1878729005967340534">
+                <tbody>
+                <tr class="grey top bottom" data-ignore="1">
+                    <td class="center" colspan="2"><b>Review 1</b></td>
+                </tr>
+                <tr class="blue">
+                    <td>PC member</td>
+                    <td class="value">Camille Gobert</td>
+                </tr>
+                <tr class="blue">
+                    <td><i>Overall evaluation</i></td>
+                    <td class="value">
+                        The submission motivates and presents fluid.cell, a JavaScript library that provides reactive
+                        programming primitives in the form of _cells_ that one can get, set, watch, and define using a
+                        function that may depend on other cells. The author also briefly describes six characteristics
+                        that reactive libraries may or may not exhibit: discovering dynamic dependencies, ensuring value
+                        consistency, avoiding unnecessary calculations, permitting asynchronous values, supporting
+                        cycles for bidirectionality, and tracing the causes of an update, which they use to compare
+                        fluid.cell against seven other implementations of reactive primitives. They conclude with a
+                        live, step-by-step demonstration of how fluid.cell evaluates a small snippet of code<br><br>Beyond
+                        the technical contribution, there is great value in the way the submission frames the library.
+                        Similar to what _Build Systems à la Carte_ (Mokhov et al., 2018, cited in §2.2) did for build
+                        systems, the six characteristics of reactive programming libraries that Basman describes not
+                        only help understand the novelty of fluid.cell, but also help frame what reactive systems may or
+                        may not support. According to several references that Basman cites in the submission, this was
+                        previously done for individual characteristics or subsets of such characteristics. However,
+                        there is no single, citable artefact that consolidates all these characteristics. As such, I
+                        really appreciate this aspect of the submission.<br><br>In my opinion, the main thing that is
+                        missing is a series of (more) concrete examples that demonstrate the actual value of each
+                        characteristic (and of the unique combination of characteristics that fluid.cell
+                        supports)—either because it is a fundamental requirement for implementing a particular feature,
+                        because it makes the implementation significantly easier or cleaner or because it results in
+                        better UX or PX.<br>For example, I would like to know how large the performance gain can be when
+                        developing an application with a reactive library that supports "early cutoff", to determine
+                        whether it actually matters and in which situations a developer who plans to use a reactive
+                        library should care about it.<br>Similarly, I would like to see examples of how "glitch freedom"
+                        and "causes" improve UX/PX, or how their absence leads to issues we should care about.<br>I
+                        imagine that this "validation" of each property may rely on a mix of small-scale examples,
+                        similar to the reactive Kelvin/Celsius/Fahrenheit converter shown in one of the figures, and
+                        large-scale examples, such as by pointing at specific issues found in real-world systems that
+                        use one of the libraries that fluid.cell is compared against, such as by investigating how the
+                        lack of bidirectionality manifests in apps built upon, e.g., Observable or Solid, and how
+                        developers worked around that issue (beyond simply pointing to possible mechanisms, such as
+                        Vue's notion of a _writeable computed_)?<br><br>Aside from that main comment, I also have a few
+                        other comments/questions regarding the submission:<br><br>1. I really appreciate that
+                        bidirectionality was taken into consideration when creating fluid.cell, as it is definitely a
+                        tricky—and yet important—matter. Although the last paragraph of section 3 briefly explains it, I
+                        would have liked to know how the issue was tackled in fluid.cell more in detail, such as by
+                        explaining what "opportunistically folding a node plus an edge into a single data structure"
+                        actually means, perhaps using a concrete example (the temperature converter may come in handy
+                        for that!) The same comment applies to how this affects the algorithm that traverses and
+                        invalidates the graph.<br><br>2. One of the arguments in favour of fluid.cell's short-circuit
+                        behaviour is that it would help deal with "dependencies have not yet been loaded or constructed"
+                        (§3). However, from what I understand from the library's API, one needs to have references to
+                        all the cells that are involved in the computation in order to declare them as static
+                        dependencies when creating a computed cell (otherwise, I imagine that the JS engine would throw
+                        an error when it evaluates the code since the variables would not exist). In particular, this
+                        would probably happen when creating a bidirectional relationship between two computed cells, as
+                        in the temperature converter example: they would have to start by defining, e.g., the Kelvin
+                        cell before the Celsius cell, even though the Kelvin cell's definition must refer to the Celsius
+                        cell. I wish the author could clarify how fluid.cell deals (or not?) with this kind of
+                        situation.<br><br>3. I am definitely in favour of designing software meant to be used and
+                        extended in ways that its developers did not consider, and I appreciate that this is also one of
+                        fluid.cell's goals. Given that goal, I am curious whether developers and/or end users could
+                        benefit from viewing and interacting with the reactive graph that the library internally creates
+                        and updates, as in the demo. This may be related to previous work on exposing reactive
+                        dependency graphs to users, as in, e.g., <a href="https://doi.org/10.1145/3486605.3486785">Poker</a>
+                        (Descheemaeker et al., 2021) and Ink &amp; Switch's <a href="https://inkandswitch.com/project/jacquard">Jacquard</a> (2024), although the latter's graph works at a much coarser scale
+                        since it describes dependencies between entire files.
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </a><a name="Review_12869346">
+        <div class="ct_tbl">
+            <table cellpadding="0" cellspacing="0" class="ct_table" id="ec:table11028"
+                   style="border-bottom:solid #aaa 1px;border-top:solid #bbb 1px;max-width:700pt" data-header="false"
+                   data-kind="new" data-uid="9693054975195697960">
+                <tbody>
+                <tr class="grey top bottom" data-ignore="1">
+                    <td class="center" colspan="2"><b>Review 2</b></td>
+                </tr>
+                <tr class="blue">
+                    <td>PC member</td>
+                    <td class="value">Tomas Petricek</td>
+                </tr>
+                <tr class="blue">
+                    <td><i>Overall evaluation</i></td>
+                    <td class="value">
+                        The submission motivates and presents a reactive programming abstract - fluid.cell - which is
+                        presented as the underlying building block that can enable more malleable (ie. can be modified
+                        by the user) and disclosable (ie. the modification capabilities can be discovered as needed)
+                        computing. The submission combines motivation for the abstraction, technical description of its
+                        key capabilities and a nice interactive demo (which I very much applaud!)<br><br>The first point
+                        of the submission is that malleable substrates need reactivity - this is an interesting claim.
+                        At a high-level, this is clear - if the substrate should enable modification, it needs to react
+                        to user actions. But I think it would be interesting to see what kind of malleability is enabled
+                        by what kind of reactivity exactly - for example UNIX (when seen as a programming system in the
+                        "Technical Dimensions of Programming Systems" (Jakubovic, 2023) reading) is very much
+                        malleable/self-sustainable (you can reprogram it from within itself). It does need a degree of
+                        interactivity (terminal!) but not reactivity in the sense of fluid.cell. What doe we get by
+                        adding more reactivity? Malleability through visual interactive user interfaces? (But what
+                        exactly is the "least amount" of reactivity that you need for certain degree of malleability?) I
+                        would love to see a more detailed discussion on this problem! (I suspect the Lopecode project
+                        (Larkworthy, Substrates'25) would very much agree about the need for reactivity, but what is it
+                        that it enables?)<br><br>My other notes on the paper are smaller questions and comments about
+                        the more technical aspects of fluid.cell:<br><br>* You say that "push-based" systems inherently
+                        suffer from glitches - I can see how this is the case (at least unless they combine some
+                        push-based with pull-based characteristics?) - but I think the problem is that something like
+                        mouse clicks - or other user-triggered events - are inherently "push based" in that they push
+                        data into the reactive system from some source nodes. How can we make the system pull based if
+                        we still want to handle user interactions? (I can imagine some answers, but I would like to know
+                        what fluid.cell does...)<br><br>* The paper refers to "community's wisdom" on reactive systems -
+                        this is intriguing! There certainly is some community wisdom there, but it seems that this is
+                        largely unwritten and not easy to learn! (I suspect the author acquired this by spending a lot
+                        of time studying &amp; interacting with other systems.) Is this kind of wisdom that could be
+                        written? How do we make sure it remains accessible to outsiders of this highly specialized
+                        crowd?<br><br>* Another interesting kind of reactive system is Vega (the data visualization
+                        library) - but in Vega, data updates are sent (push based) through the dependency graph and the
+                        updates also contain data diffs - so the pulses sent over the graph do not just instructs nodes
+                        to recompute, but also give them data. Is this something that is inherently impossible to do in
+                        a glitch free way? Is it different from the usual pull/push systems? (Or is there another
+                        dimension - pull/push and diff/notification?)<br><br>* Next, the paper mentions support for
+                        bidirectional arcs (with the temperature conversion example) - but I suppose this is not
+                        illustrated by the demo at the end. What would the bidirectional implementation of the
+                        temperature conversion look like?<br><br>* I also expect that, to support malleability, it is
+                        expected that the graph can be modified during its execution in some way. Is this something
+                        that's already supported by fluid.cell? How would one make a change to the graph during its
+                        execution?
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </a><a name="Review_12875048">
+        <div class="ct_tbl">
+            <table cellpadding="0" cellspacing="0" class="ct_table" id="ec:table11029"
+                   style="border-bottom:solid #aaa 1px;border-top:solid #bbb 1px;max-width:700pt" data-header="false"
+                   data-kind="new" data-uid="17248985441199500206">
+                <tbody>
+                <tr class="grey top bottom" data-ignore="1">
+                    <td class="center" colspan="2"><b>Review 3</b></td>
+                </tr>
+                <tr class="blue">
+                    <td>PC member</td>
+                    <td class="value">Eva Krebs</td>
+                </tr>
+                <tr class="blue">
+                    <td><i>Overall evaluation</i></td>
+                    <td class="value">
+                        <h2>Summary</h2>
+                        <p>This web-based submission first discusses why reactivity is important for substrates in
+                            general, then introduces fluid.cell, a reactive library that substrates can use. Core
+                            characteristics of fluid.cell are motivated and explained, including being glitch-free
+                            and supporting bidirectional graphs. The submission concludes with a demo of the library
+                            that visualizes updates of a 4-node graph.</p>
+                        <h2>Strengths</h2>
+                        <ul>
+                            <li>The demo is very helpful, and it is nice that it specifically showcases the
+                                abilities of the library, not a system using the library somewhere in addition to a
+                                lot of other things.
+                            </li>
+                            <li>Both the discussion of the role of reactivity and fluid.cell itself fit the call for
+                                contributions very well.
+                            </li>
+                            <li>"[...] not all audiences will want this gap bridged [...]" --&gt; I like that the
+                                paper touches on usability concerns such as this. It is important to have malleable
+                                systems, but not everyone needs everything a system can do all the time (and
+                                especially accidental system-breaking should not be easy).
+                            </li>
+                            <li>I like the references to other relevant systems throughout the submission, including
+                                the comparison table of the characteristics of fluid.cell and other reactivity
+                                libraries.
+                            </li>
+                            <li>I like that the submission includes a subsection on the relation of reactivity and
+                                liveness.
+                            </li>
+                        </ul>
+                        <h2>Questions and Suggestions</h2>
+                        <ul>
+                            <li>In addition to the technical requirements of reactivity libraries, it might also be
+                                interesting to collect the usability concerns for substrates that are mentioned
+                                throughout the reactivity discussion as a list of characteristics. What substrates
+                                already fulfill which requirements? How easy are some of these to implement, e.g.,
+                                would it be enough to hide the meta tools for Boxer and Lively behind a special
+                                shortcut to make them more approachable, etc.?
+                            </li>
+                            <li>Demo: The Reset button &amp; Previous button seem to break the demo for me. When I
+                                use them, all nodes except A stay undefined forever.
+                            </li>
+                            <li>Demo: Can the code in the demo be altered? Editing is enabled, but it didn't seem to
+                                integrate my change into the visualization steps (adding a line with another
+                                set-call after line 33).
+                            </li>
+                            <li>Small note: Links/references to Boxer and Lively (Boxer later has a link)</li>
+                            <li>Small note: Typo "integation domain" --&gt; "integration domain"</li>
+                        </ul>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </a>
+</div>
+</div>
+</body>
+</html>
