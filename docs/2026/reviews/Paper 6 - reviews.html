@@ -12,7 +12,67 @@
 <h1>Reviews for Paper 6: The Lopecode Tour</h1>
 
 <div class="subcontent">
-    <div style="clear: right"><a name="Review_12874422">
+    <div style="clear: right"><a name="Review_12873977">
+        <div class="ct_tbl">
+            <table cellpadding="0" cellspacing="0" class="ct_table" id="ec:table7599"
+                   style="border-bottom:solid #aaa 1px;border-top:solid #bbb 1px;max-width:700pt" data-header="false"
+                   data-kind="new" data-uid="1390291703460199213">
+                <tbody>
+                <tr class="grey top bottom" data-ignore="1">
+                    <td class="center" colspan="2"><b>Review 1</b></td>
+                </tr>
+                <tr class="blue">
+                    <td>PC member</td>
+                    <td class="value">Gilad Bracha</td>
+                </tr>
+                <tr class="blue">
+                    <td><i>Overall evaluation</i></td>
+                    <td class="value">
+                        Lopecode is a live document system based on Markdown, Observable and Javascript. It is a very
+                        nice piece of work and I enjoyed reading about it.<br><br>I am very much aligned with the idea
+                        of a self-modifiying web-based editor that is also a live IDE; given that I've built one myself,
+                        that should not be a surprise.<br><br><br> The design principles are clearly articulated, and I
+                        am in complete agreement with them (and I've writen about them as well). Of course, using the
+                        system to write the submission is to be commended (and yet also expected,at least in the
+                        substrates community).<br><br>And yes, it should have a self contained serializable
+                        format.<br><br>Programmable prose: it goes almost without saying in such a system, but it is a
+                        very nice turn of phrase.<br><br>Another point to be commended is including the AI critique. I
+                        agree on some of the points - relying on function printing is problematic.<br><br>I would love
+                        to write an extended review that goes into the details, but time is limited, and there's no
+                        question that the paper should be accepted, so I'll keep it short.<br><br>Question: you say
+                        Lopecode is a local first solution. I agree this is very desirable; but I'm not clear that
+                        Lopecode is truly local-first. It certainly runs locally, but what ensures synchronization
+                        across multiple clients?<br><br>I find it valuable to compare Lopecode to Ampleforth, precisely
+                        because they are quite close philosophically.<br><br>Key differences:<br><br>Lopecode uses a
+                        reactive model. This is very attractive. In Ampleforth, reactivity is more ad hoc. The Newspeak
+                        UI frmaework is reactive, and one can layer reactive cells on top (I did a naive experiment on
+                        this called Ozymandias). Integrating a computaional notebook with a liev IDE addresses many of
+                        the well known limitations of these notebooks (Observable improves upon Jupyter, but not nearly
+                        enough; Lopecode clearly takes things to another level).<br><br>Lopcode does not incorporate a
+                        programming language as such. Rather, it uses Javascript, effectively extended to be reactive by
+                        forcing its use in cells al computational notebooks. As a programming language designer, I find
+                        the use of Javascript distasteful. It also complicates support for live programming, modularity
+                        and security. I suspect the latter two are non-goals for Lopecode, but I am intrigued as to how
+                        you support true liveness using Javascript, and what are the trade-offs/costs/limitations this
+                        implies.<br><br>Lopecode uses Markdown, extended with the ability to insert DOM nodes.
+                        Ampleforth uses HTML directly. Using Markdown simplifies amtters immensel. Ampleforth supports
+                        bi-directional editing, and doing this for fully general HTML is a Sysephean task that invites
+                        bugs and instability.<br>The use of HTML was largely motivated by the desire to support general
+                        purpose embedded DOM trees. Frankly, the idea of incorporating a Markdown extension for DOM had
+                        not occured to me. I suspect it also entails limitations - what happens if a Lopecode document is
+                        embedded in one of these nested DOM elements? Does this compose properly?<br><br>Overall, a
+                        great system. Choices are more pargmatic than mine - but that has allowed you to produce
+                        something mores solid.<br><br>To be nit-picky, I think an academic submission should discuss
+                        related work, give citations and so on. Some of these appear almost inadvertantly (as in the
+                        acknowledgements section) but there is a reason for the classic framing of research papers.
+                        Related work, future work, conclusions are all valuable. None of which substantially detracts
+                        from this excellent submission.
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </a><a name="Review_12874422">
         <div class="ct_tbl">
             <table cellpadding="0" cellspacing="0" class="ct_table" id="ec:table7600"
                    style="border-bottom:solid #aaa 1px;border-top:solid #bbb 1px;max-width:700pt" data-header="false"
